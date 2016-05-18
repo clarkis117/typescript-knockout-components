@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"noImplicitAny": false,
+		"noEmitOnError": true,
+		"removeComments": false,
+		"sourceMap": true,
+		"target": "es6",
+		//"outDir": "./dist",
+		"outFile": "./dist/ko-component.js"
+	},
+	"exclude": [
+		"node_modules",
+		"bower_components",
+		"wwwroot"
+	]
+}

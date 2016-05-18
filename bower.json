@@ -1,0 +1,21 @@
+{
+  "name": "typescript-knockout-components",
+  "homepage": "https://github.com/clarkis117/typescript-knockout-components",
+  "authors": [
+    "Joshua Clark <clarkis117@live.com>"
+  ],
+  "description": "A toolbox of reusable code and knockout components",
+  "main": "./dist/ko-component.js",
+  "keywords": [
+    "knockout",
+    "typescript"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
