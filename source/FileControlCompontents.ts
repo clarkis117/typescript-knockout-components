@@ -1,5 +1,5 @@
 ﻿/// <reference path="../typings/globals/knockout/index.d.ts" />
-
+//stuff
 namespace KoComponents {
 
 	export class FileInput {
