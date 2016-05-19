@@ -1,5 +1,6 @@
 ﻿namespace KoComponents {
-
+	
+	//client
 	export interface ApiClient {
 		ApiRoute: string
 
