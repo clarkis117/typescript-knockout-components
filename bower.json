@@ -17,5 +17,13 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "devDependencies": {
+    "knockout": "^3.4.0",
+    "jquery": "^2.2.3",
+    "knockout-file-bindings": "^1.0.2"
+  },
+  "resolutions": {
+    "jquery": "^2.2.3"
+  }
 }
