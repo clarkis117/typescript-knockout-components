@@ -81,6 +81,6 @@ ko.components.register("reactive-title",
 		template:
 		'<span class="label label-success" data-bind="if: IsNew">New</span>\
 		<span data-bind="text: Title"></span>\
-		<div data-bind="ifnot: IsNew"><span class="" databind="text: Value"></span></div>'
+		<span data-bind="ifnot: IsNew"><span data-bind="text: Value"></span></span>'
 	}
 );

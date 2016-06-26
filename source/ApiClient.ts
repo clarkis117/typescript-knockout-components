@@ -1,6 +1,5 @@
 ﻿namespace KoComponents {
-	
-	//client
+
 	export interface ApiClient {
 		ApiRoute: string
 
@@ -21,17 +20,12 @@
 		GetAll(): JQueryXHR;
 
 		Delete(Id: string): JQueryXHR;
+	}
+
+	export interface GraphClient extends ApiClient {
 
 		DeleteChild(Child: any): JQueryXHR;
 	}
-
-	/*
-	export interface ApiClientCallbacks {
-		CreateSuccess: () => void;
-
-		Error: (Request: JQueryXHR) => void;
-	}
-	*/
 
 	//todo: add null checking to api functions
 	export class GenericApiClient implements ApiClient {
@@ -48,7 +42,6 @@
 			Get: "get",
 			GetAll: "getall",
 			Delete: "delete",
-			DeleteChild: "deletechild"
 		}
 
 		//public CallBacks: ApiClientCallbacks;
@@ -123,6 +116,36 @@
 			return $.ajax(settings);
 		}
 
+		public GetAll() {
+
+			let settings: JQueryAjaxSettings = {
+				type: "GET",
+				//dataType: "json",
+				contentType: "application/json",
+				url: this.createRequestUrl(this.Actions.GetAll)
+			}
+
+			return $.ajax(settings);
+		}
+	}
+
+	export class GraphApiClient extends GenericApiClient implements GraphClient
+	{
+		public Actions = {
+			Create: "create",
+			Update: "update",
+			Get: "get",
+			GetAll: "getall",
+			Delete: "delete",
+			DeleteChild: "deletechild"
+		}
+
+		constructor(apiRoute: string, itemTypeName: string)
+		{
+			super(apiRoute, itemTypeName);
+
+		}
+
 		public DeleteChild(Child: any) {
 
 			let settings: JQueryAjaxSettings = {
@@ -131,18 +154,6 @@
 				contentType: "application/json",
 				url: this.createRequestUrl(this.Actions.DeleteChild),
 				data: Child
-			}
-
-			return $.ajax(settings);
-		}
-
-		public GetAll() {
-
-			let settings: JQueryAjaxSettings = {
-				type: "GET",
-				//dataType: "json",
-				contentType: "application/json",
-				url: this.createRequestUrl(this.Actions.GetAll)
 			}
 
 			return $.ajax(settings);
